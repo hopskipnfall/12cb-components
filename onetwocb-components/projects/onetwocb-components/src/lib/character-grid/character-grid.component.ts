@@ -1,12 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+export interface CharacterGridCell {
+  id: string;
+  imageUrl: string;
+  state: 'default' | 'selected' | 'disabled';
+  clickable: boolean;
+  stocks?: {
+    imageUrl: string;
+    count: number;
+  };
+}
 
 @Component({
-  selector: 'character-grid',
+  selector: 'onetwocb-character-grid',
   templateUrl: './character-grid.component.html',
   styleUrls: ['./character-grid.component.css'],
 })
 export class CharacterGridComponent implements OnInit {
-  constructor() {}
+  @Input() characterGridData: CharacterGridCell[];
+  @Input() columns: number;
 
   ngOnInit(): void {}
 }
