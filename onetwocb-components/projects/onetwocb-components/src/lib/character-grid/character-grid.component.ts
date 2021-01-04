@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-character-grid',
+  selector: 'character-grid',
   templateUrl: './character-grid.component.html',
   styleUrls: ['./character-grid.component.css'],
 })
