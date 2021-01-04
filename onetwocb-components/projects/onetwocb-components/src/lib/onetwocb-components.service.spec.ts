@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { OnetwocbComponentsService } from './onetwocb-components.service';
 
 describe('OnetwocbComponentsService', () => {

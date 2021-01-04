@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
-import { OnetwocbComponentsComponent } from './onetwocb-components.component';
 import { CharacterGridComponent } from './character-grid/character-grid.component';
-
-
+import { OnetwocbComponentsComponent } from './onetwocb-components.component';
 
 @NgModule({
   declarations: [OnetwocbComponentsComponent, CharacterGridComponent],
-  imports: [
-  ],
-  exports: [OnetwocbComponentsComponent]
+  imports: [],
+  exports: [OnetwocbComponentsComponent],
 })
-export class OnetwocbComponentsModule { }
+export class OnetwocbComponentsModule {}

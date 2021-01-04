@@ -36,9 +36,7 @@
               "projects/onetwocb-components/tsconfig.lib.json",
               "projects/onetwocb-components/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -67,9 +65,7 @@
               "projects/example-app/src/favicon.ico",
               "projects/example-app/src/assets"
             ],
-            "styles": [
-              "projects/example-app/src/styles.scss"
-            ],
+            "styles": ["projects/example-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -130,9 +126,7 @@
               "projects/example-app/src/favicon.ico",
               "projects/example-app/src/assets"
             ],
-            "styles": [
-              "projects/example-app/src/styles.scss"
-            ],
+            "styles": ["projects/example-app/src/styles.scss"],
             "scripts": []
           }
         },
@@ -144,9 +138,7 @@
               "projects/example-app/tsconfig.spec.json",
               "projects/example-app/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
