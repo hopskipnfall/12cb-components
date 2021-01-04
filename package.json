@@ -1,0 +1,19 @@
+{
+  "name": "12cb-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hopskipnfall/12cb-components.git"
+  },
+  "author": "Jonn Spencer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hopskipnfall/12cb-components/issues"
+  },
+  "homepage": "https://github.com/hopskipnfall/12cb-components#readme"
+}
