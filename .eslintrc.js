@@ -53,7 +53,7 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
   },
   ignorePatterns: [
-    'dist/**',
+    'onetwocb-components/dist/**',
     'coverage/**',
     'src/**/*.js',
     'extraction/**/*.js',
