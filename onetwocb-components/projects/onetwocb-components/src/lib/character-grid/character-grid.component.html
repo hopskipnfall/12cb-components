@@ -1,1 +1,22 @@
-<p>character-grid works!</p>
+<div class="container" #container>
+  <mat-grid-list [cols]="columns" rowHeight="1:1">
+    <mat-grid-tile
+      matRipple
+      [matRippleDisabled]="true || cell.state === 'disabled'"
+      class="tile"
+      *ngFor="let cell of characterGridData"
+      [style.background-color]="getBgColor(cell)"
+      [ngClass]="{
+        selectable: cell.state === 'selectable',
+        selected: cell.state === 'selected',
+        disabled: cell.state === 'disabled'
+      }"
+      (click)="onClick(cell)"
+    >
+      <div
+        class="inner-tile"
+        [style.background-image]="'url(' + cell.imageUrl + ')'"
+      ></div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

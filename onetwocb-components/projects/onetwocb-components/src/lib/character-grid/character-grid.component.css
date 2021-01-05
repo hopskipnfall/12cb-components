@@ -1,0 +1,59 @@
+.tile {
+  margin-bottom: 0;
+}
+
+.inner-tile {
+  width: 100%;
+  height: 100%;
+  background-size: 90%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* display: flex;
+  flex-direction: column;
+  flex-grow: 1; */
+}
+
+.selectable {
+  transform: scale(0.95);
+  border-radius: 6px;
+
+  /* idk about this */
+  float: left;
+
+  animation: pulse 8s alternate;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.25;
+  filter: grayscale(100%);
+}
+
+@keyframes pulse {
+  3% {
+    transform: scale(0.92);
+  }
+  6% {
+    transform: scale(0.95);
+  }
+  9% {
+    /* background: darken(red, 9%); */
+    transform: scale(0.99);
+  }
+  12% {
+    transform: scale(0.95);
+  }
+  15% {
+    /* background: red; */
+  }
+}
+
+.selected {
+  border-radius: 6px;
+  float: left;
+}
+
+.selected .inner-tile {
+  background-size: 80%;
+}
