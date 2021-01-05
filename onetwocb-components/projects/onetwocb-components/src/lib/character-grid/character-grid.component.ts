@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 export interface CharacterGridCell {
   id: string;
@@ -23,6 +29,13 @@ export interface CharacterGridStyle {
   styleUrls: ['./character-grid.component.css'],
 })
 export class CharacterGridComponent implements AfterViewInit {
+  /**
+   * Emits the ID of the tile that was clicked.
+   *
+   * Note this is not triggered for "disabled" tiles.
+   */
+  @Output() tileClicked: EventEmitter<string> = new EventEmitter();
+
   @Input() characterGridData: CharacterGridCell[];
   @Input() columns: number;
   @Input() style: CharacterGridStyle;
@@ -63,6 +76,12 @@ export class CharacterGridComponent implements AfterViewInit {
       return this.style.selectedBgColor;
     } else if (cell.state === 'disabled') {
       return this.style.disabledBgColor;
+    }
+  }
+
+  onClick(cell: CharacterGridCell): void {
+    if (cell.state === 'selectable') {
+      this.tileClicked.emit(cell.id);
     }
   }
 }

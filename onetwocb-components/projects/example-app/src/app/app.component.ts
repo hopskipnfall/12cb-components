@@ -48,4 +48,8 @@ export class AppComponent {
     selectedBgColor: '#c1c1c1',
     disabledBgColor: '',
   };
+
+  tileClicked(id: string) {
+    alert(`You clicked ${id}!`);
+  }
 }
