@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
-import { CharacterGridCell } from 'projects/onetwocb-components/src/public-api';
+import {
+  CharacterGridCell,
+  CharacterGridStyle,
+} from 'projects/onetwocb-components/src/public-api';
+
+let i = 0;
+const props: ('selectable' | 'selected' | 'disabled')[] = [
+  'selectable',
+  'selected',
+  'disabled',
+];
 
 function makeCharCell(name: string): CharacterGridCell {
   return {
     id: name,
     imageUrl: `assets/jouske/${name}.svg`,
-    state: 'default',
+    state: props[i++ % 3],
     clickable: true,
   };
 }
@@ -32,4 +42,10 @@ export class AppComponent {
     makeCharCell('samus'),
     makeCharCell('yoshi'),
   ];
+
+  characterGridStyle: CharacterGridStyle = {
+    selectableBgColor: '#616060',
+    selectedBgColor: 'red',
+    disabledBgColor: 'blue',
+  };
 }

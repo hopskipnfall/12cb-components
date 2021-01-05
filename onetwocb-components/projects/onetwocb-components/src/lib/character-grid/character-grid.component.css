@@ -1,4 +1,28 @@
+.tile {
+  margin-bottom: 0;
+}
+
 .inner-tile {
   width: 100%;
   height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.selectable {
+  transform: scale(0.95);
+  border-radius: 6px;
+
+  /* idk about this */
+  float: left;
+}
+
+.selected {
+  border-radius: 6px;
+  float: left;
+}
+
+.selected .inner-tile {
+  background-size: 80%;
 }
