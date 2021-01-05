@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
 import {
+  CellState,
   CharacterGridCell,
   CharacterGridStyle,
 } from 'projects/onetwocb-components/src/public-api';
 
 let i = 0;
-const props: ('selectable' | 'selected' | 'disabled')[] = [
-  'selectable',
-  'selected',
-  'disabled',
-];
+const props: CellState[] = ['selectable', 'selected', 'disabled', 'active'];
 
 function makeCharCell(name: string): CharacterGridCell {
   return {
     id: name,
     imageUrl: `assets/jouske/${name}.svg`,
-    state: props[i++ % 3],
+    state: props[i++ % 4],
     clickable: true,
   };
 }

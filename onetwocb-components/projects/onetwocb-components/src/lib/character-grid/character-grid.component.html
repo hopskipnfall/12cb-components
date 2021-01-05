@@ -8,6 +8,7 @@
       [style.background-color]="getBgColor(cell)"
       [ngClass]="{
         selectable: cell.state === 'selectable',
+        active: cell.state === 'active',
         selected: cell.state === 'selected',
         disabled: cell.state === 'disabled'
       }"

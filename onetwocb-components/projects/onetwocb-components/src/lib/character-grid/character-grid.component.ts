@@ -6,15 +6,18 @@ import {
   Output,
 } from '@angular/core';
 
+export type CellState = 'selectable' | 'selected' | 'active' | 'disabled';
+
 export interface CharacterGridCell {
   id: string;
   imageUrl: string;
-  state: 'selectable' | 'selected' | 'disabled';
+  state: CellState;
   clickable: boolean;
   stocks?: {
     imageUrl: string;
     count: number;
   };
+  selectedBgColorOverride?: string;
 }
 
 export interface CharacterGridStyle {
@@ -71,7 +74,7 @@ export class CharacterGridComponent implements AfterViewInit {
 
   getBgColor(cell: CharacterGridCell): string {
     if (cell.state === 'selectable') {
-      return this.style.selectableBgColor;
+      return cell.selectedBgColorOverride ?? this.style.selectableBgColor;
     } else if (cell.state === 'selected') {
       return this.style.selectedBgColor;
     } else if (cell.state === 'disabled') {
