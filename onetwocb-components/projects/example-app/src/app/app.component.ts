@@ -45,7 +45,7 @@ export class AppComponent {
 
   characterGridStyle: CharacterGridStyle = {
     selectableBgColor: '#616060',
-    selectedBgColor: 'red',
-    disabledBgColor: 'blue',
+    selectedBgColor: '#c1c1c1',
+    disabledBgColor: '',
   };
 }

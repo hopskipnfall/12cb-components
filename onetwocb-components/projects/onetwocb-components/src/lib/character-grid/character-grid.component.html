@@ -2,13 +2,14 @@
   <mat-grid-list [cols]="columns" rowHeight="1:1">
     <mat-grid-tile
       matRipple
-      [matRippleDisabled]="cell.state === 'disabled'"
+      [matRippleDisabled]="true || cell.state === 'disabled'"
       class="tile"
       *ngFor="let cell of characterGridData"
       [style.background-color]="getBgColor(cell)"
       [ngClass]="{
         selectable: cell.state === 'selectable',
-        selected: cell.state === 'selected'
+        selected: cell.state === 'selected',
+        disabled: cell.state === 'disabled'
       }"
     >
       <div
@@ -18,16 +19,3 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-
-<br />
-
-<div
-  class="example-ripple-container mat-elevation-z4"
-  matRipple
-  [matRippleCentered]="true"
-  [matRippleColor]="'blue'"
->
-  Click me
-</div>
-
-<mat-checkbox>my checkbox</mat-checkbox>
