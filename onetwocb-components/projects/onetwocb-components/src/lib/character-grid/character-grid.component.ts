@@ -75,15 +75,18 @@ export class CharacterGridComponent implements AfterViewInit {
   getBgColor(cell: CharacterGridCell): string {
     if (cell.state === 'selectable') {
       return this.style.selectableBgColor;
-    } else if (cell.state === 'selected') {
+    }
+    if (cell.state === 'selected') {
       return cell.selectedBgColorOverride ?? this.style.selectedBgColor;
-    } else if (cell.state === 'disabled') {
+    }
+    if (cell.state === 'disabled') {
       return this.style.disabledBgColor;
     }
+    return '';
   }
 
   onClick(cell: CharacterGridCell): void {
-    if (cell.state === 'selectable') {
+    if (cell.clickable) {
       this.tileClicked.emit(cell.id);
     }
   }
